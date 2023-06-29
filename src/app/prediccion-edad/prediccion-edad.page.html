@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Predicción Edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+    <ion-title size="large">Predicción Edad</ion-title>
+  </ion-header>
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="full" (click)="determinarEdad()">Determinar</ion-button>
+    
+    <div *ngIf="edad <= 30">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Joven</ion-card-title>
+        </ion-card-header>
+        <img src="https://us.123rf.com/450wm/domenicogelermo/domenicogelermo1711/domenicogelermo171100207/91077539-foto-del-muchacho-feliz-joven-adolescente-adorable-que-mira-la-c%C3%A1mara.jpg" alt="Imagen de un joven">
+        <ion-card-content>Edad: {{ edad }}</ion-card-content>
+      </ion-card>
+    </div>
+    
+    <div *ngIf="edad > 30 && edad <= 60">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Adulto</ion-card-title>
+        </ion-card-header>
+        <img src="https://img.freepik.com/fotos-premium/hombre-adulto-joven-guapo-sonriendo-ampliamente-mirando-feliz-positivo-seguro-exitoso-ambos-pulgares-arriba_1194-215353.jpg" alt="Imagen de un adulto">
+        <ion-card-content>Edad: {{ edad }}</ion-card-content>
+      </ion-card>
+    </div>
+    
+    <div *ngIf="edad > 60">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Anciano</ion-card-title>
+        </ion-card-header>
+        <img src="https://ubikare.io/wp-content/uploads/sarcopenia-ancianos-que-es-768x512.jpg">
+        <ion-card-content>Edad: {{ edad }}</ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>
